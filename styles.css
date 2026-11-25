@@ -1,0 +1,34 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 4rem;
+}
+
+.grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.item-square {
+  grid-column: span 2;
+  aspect-ratio: 1 / 1;
+}
+
+.item-landscape {
+  grid-column: span 3;
+  aspect-ratio: 3 / 2;
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .item-square,
+  .item-landscape {
+    grid-column: auto;
+  }
+}
